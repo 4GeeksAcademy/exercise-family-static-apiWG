@@ -18,7 +18,7 @@ def client():
 def test_first_three(client):
     response = client.get('/members')
     members = json.loads(response.data)
-    assert len(members) == 3, "The Family structure must be initialized with the 3 members specified in the instructions"
+    assert len(members["data"]) == 3, "The Family structure must be initialized with the 3 members specified in the instructions"
 
 
 @pytest.mark.it("Implement the POST /members method to add a new member")
